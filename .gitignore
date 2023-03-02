@@ -1,0 +1,4 @@
+application.yaml
+.vscode
+__pycache__
+*.ipynb
