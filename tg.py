@@ -22,10 +22,10 @@ def start(update, context):
 def startBot():
     token = config['tg']['token']
     # 设置代理参数
-    request_kwargs = {'proxy_url': 'socks5h://127.0.0.1:7890'}
+    # request_kwargs = {'proxy_url': 'socks5h://127.0.0.1:7890'}
     # 创建Updater对象
     try:
-        updater = Updater(token=token, request_kwargs=request_kwargs) #
+        updater = Updater(token=token) #, request_kwargs=request_kwargs
     except Exception as e:
          logger.error(f"创建tg机器人出错: {e}")  
     # 添加一个start命令的处理器
