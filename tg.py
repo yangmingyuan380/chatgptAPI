@@ -17,8 +17,11 @@ def echo(update,mes):
         update.message.reply_text(text=ans)
     
 def start(update, context):
-        update.message.reply_text('Hello World!')
-
+        try:
+            ans = chatgpt.newChat()
+        except Exception as e:
+            ans = f"chatgpt出错：{e}"
+        update.message.reply_text(text=ans)
 def startBot():
     token = config['tg']['token']
     # 设置代理参数
