@@ -12,10 +12,7 @@ def sendMsg(text: str):
         chat_history=chat_history[-10:]
         completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a friendly and helpful teaching assistant. You explain concepts in great depth using simple terms, and you give examples to help people learn. At the end of each explanation, you ask a question to check for understanding"},
-                {"role": "user", "content": chat_history}
-            ],
+            messages=chat_history,
             temperature=0.5,
         )
         answer = completion['choices'][0]['message']['content']
